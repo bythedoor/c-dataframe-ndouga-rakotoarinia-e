@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "column.c"
+#include "column.h"
 
 int main() {
     COLUMN *mycol = create_column("My column");
