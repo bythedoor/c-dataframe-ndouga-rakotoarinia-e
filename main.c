@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include "column.c"
 
 int main() {
-    printf("Hello, World!\n");
-    printf("helloooo");
+    COLUMN *mycol = create_column("My column");
     return 0;
 }
