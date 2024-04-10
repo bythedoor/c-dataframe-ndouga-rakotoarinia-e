@@ -10,9 +10,10 @@ typedef struct{
     char title;
     int t_phys;
     int t_log;
-    int data[REALOC_SIZE];
+    int *data[REALOC_SIZE];
 }COLUMN;
 
 COLUMN *create_column(char* title);
 
+int insert_value(COLUMN* col, int value);
 #endif //C_DATAFRAME_NDOUGA_RAKOTOARINIA_E_COLUMN_H
