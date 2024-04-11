@@ -10,7 +10,7 @@ typedef struct{
     char title;
     int t_phys;
     int t_log;
-    int *data[REALOC_SIZE];
+    int* data[REALOC_SIZE];
 }COLUMN;
 
 COLUMN *create_column(char* title);

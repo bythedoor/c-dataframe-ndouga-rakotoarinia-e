@@ -13,8 +13,8 @@ COLUMN *create_column(char* title)
 }
 
 int insert_value(COLUMN *col, int value) {
-    if (col->data == NULL) {
-        col->data = (int **) malloc(REALOC_SIZE * sizeof(int *));
+    if (*col->data == NULL) {
+        *col->data = (int *) malloc(REALOC_SIZE * sizeof(int *));
         if (col->data == NULL) {
             return 0;
         }
@@ -27,7 +27,7 @@ int insert_value(COLUMN *col, int value) {
         if (nouveau_tableau == NULL) {
             return 0;
         }
-        col->data = nouveau_tableau;
+        *col->data = nouveau_tableau;
         col->t_phys = nouvelle_taille;
     }
 
