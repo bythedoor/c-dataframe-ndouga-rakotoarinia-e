@@ -46,6 +46,7 @@ int insert_value(COLUMN *col, int value) {
         if (nouveau_tableau == NULL) {
             return 0;
         }
+
         *col->data = nouveau_tableau;
         col->t_phys = nouvelle_taille;
     }
