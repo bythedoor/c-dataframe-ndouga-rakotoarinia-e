@@ -48,10 +48,16 @@ int insert_value(COLUMN *col, int value) {
         }
         *col->data = nouveau_tableau;
         col->t_phys = nouvelle_taille;
-    }
+        }
 
-    col->data[col->t_log] = &value;
+    col->data[col->t_log] = (int *)malloc(sizeof(int)); // Alloue de la mémoire pour la valeur
+    if (col->data[col->t_log] == NULL) {
+        return 0;
+        }
+
+    *col->data[col->t_log] = value;
     col->t_log++;
 
     return 1;
 }
+
