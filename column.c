@@ -30,3 +30,4 @@ COLUMN *create_column(char* title) {
 
     return c_ptr;
 }
+
