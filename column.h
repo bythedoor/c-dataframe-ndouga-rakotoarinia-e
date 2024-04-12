@@ -16,4 +16,6 @@ typedef struct{
 COLUMN *create_column(char* title);
 
 int insert_value(COLUMN* col, int value);
+
+void print_col(COLUMN* col);
 #endif //C_DATAFRAME_NDOUGA_RAKOTOARINIA_E_COLUMN_H
