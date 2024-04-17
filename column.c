@@ -78,6 +78,7 @@ int nbr_occurences(COLUMN *col, int value) {
     return x;
 }
 
+
 int get_values(COLUMN *col, int x) {
     if (x < 0 || x >= col->t_log){
         printf("Cette valeur n'existe pas");
