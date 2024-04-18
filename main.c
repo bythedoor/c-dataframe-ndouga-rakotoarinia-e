@@ -8,6 +8,6 @@ int main() {
     insert_value(mycol, 44);
     insert_value(mycol, 15);
     print_col(mycol);
-    printf("Le nombres de chiffres suppérieur à 40 est %d", values_equal(mycol,15) );
+    printf("Le nombre de chiffres superieur a 40 est %d", values_equal(mycol,15) );
     return 0;
 }

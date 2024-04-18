@@ -62,9 +62,10 @@ void print_col(COLUMN* col) {
         printf("Column is NULL\n");
         return;
     }
-
-    for (int i = 0; i < col->t_log; ++i) {
-        printf("[%d] %d\n", i, *(col->data[i]));
+    else {
+        for (int i = 0; i < col->t_log; ++i) {
+            printf("[%d] %d\n", i, *(col->data[i]));
+        }
     }
 }
 
