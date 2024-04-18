@@ -14,6 +14,6 @@ CMake Deprecation Warning:
 -- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (3.0s)
+-- Configuring done (1.7s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/cmake-build-debug
