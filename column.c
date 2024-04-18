@@ -1,7 +1,4 @@
-//
-// Created by Kimberley on 3/31/2024.
-//
-
+#include <stdio.h>
 #include <stdlib.h>
 #include "column.h"
 /*
@@ -30,4 +27,92 @@ COLUMN *create_column(char* title) {
 
     return c_ptr;
 }
+int insert_value(COLUMN *col, int value) {
+    if (*col->data == NULL) {
+        *col->data = (int *) malloc(REALOC_SIZE * sizeof(int *));
+        if (col->data == NULL) {
+            return 0;
+        }
+        col->t_phys = REALOC_SIZE;
+    }
 
+    if (col->t_log >= col->t_phys) {
+        int nouvelle_taille = col->t_phys + REALOC_SIZE;
+        int **nouveau_tableau =(int **)realloc(col->data, nouvelle_taille * sizeof(int *));
+        if (nouveau_tableau == NULL) {
+            return 0;
+        }
+
+        *col->data = nouveau_tableau;
+        col->t_phys = nouvelle_taille;
+    }
+    col->data[col->t_log] = (int *)malloc(sizeof(int)); // Alloue de la mémoire pour la valeur
+    if (col->data[col->t_log] == NULL) {
+        return 0;
+    }
+
+    *col->data[col->t_log] = value;
+    col->t_log++;
+
+    return 1;
+}
+
+void print_col(COLUMN* col) {
+    if (col == NULL) {
+        printf("Column is NULL\n");
+        return;
+    }
+    else {
+        for (int i = 0; i < col->t_log; ++i) {
+            printf("[%d] %d\n", i, *(col->data[i]));
+        }
+    }
+}
+
+int nbr_occurences(COLUMN *col, int value) {
+    int x = 0;
+    for (int i = 0; i < col->t_log; ++i) {
+        if (*(col->data[i]) == value) {
+            x++;
+        }
+    }
+    return x;
+}
+
+
+int get_values(COLUMN *col, int x) {
+    if (x < 0 || x >= col->t_log){
+        printf("Cette valeur n'existe pas");
+    }
+    return *col->data[x];
+}
+
+int values_superior(COLUMN *col, int x) {
+    int count = 0;
+    for (int i = 0; i < col->t_log; ++i) {
+        if (*(col->data[i]) > x) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int values_inferior(COLUMN *col, int x) {
+    int count = 0;
+    for (int i = 0; i < col->t_log; ++i) {
+        if (*(col->data[i]) < x) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int values_equal(COLUMN *col, int x) {
+    int count = 0;
+    for (int i = 0; i < col->t_log; ++i) {
+        if (*(col->data[i]) == x) {
+            count++;
+        }
+    }
+    return count;
+}

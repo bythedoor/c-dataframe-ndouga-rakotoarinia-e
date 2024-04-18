@@ -1,6 +1,3 @@
-//
-// Created by Kimberley on 3/28/2024.
-//
 
 #ifndef C_DATAFRAME_NDOUGA_RAKOTOARINIA_E_COLUMN_H
 #define C_DATAFRAME_NDOUGA_RAKOTOARINIA_E_COLUMN_H
@@ -15,4 +12,17 @@ typedef struct{
 
 COLUMN *create_column(char* title);
 
+int insert_value(COLUMN* col, int value);
+
+void print_col(COLUMN* col);
+
+int nbr_occurences(COLUMN *col, int value);
+
+int get_values(COLUMN *col, int x);
+
+int values_superior(COLUMN *col, int x);
+
+int values_inferior(COLUMN *col, int x);
+
+int values_equal(COLUMN *col, int x);
 #endif //C_DATAFRAME_NDOUGA_RAKOTOARINIA_E_COLUMN_H
