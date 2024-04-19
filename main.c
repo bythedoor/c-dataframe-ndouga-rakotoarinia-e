@@ -8,6 +8,10 @@ int main() {
     insert_value(mycol, 44);
     insert_value(mycol, 15);
     print_col(mycol);
-    printf("Le nombre de chiffres superieur a 40 est %d", values_equal(mycol,15) );
+    printf("Quel le nombre d'occurence de 44? %d", nbr_occurences(mycol,44));
+    printf("\nQuel est le nombre a la position 1? %d", get_values(mycol,1));
+    printf("\nIl y a %d nombre(s) superieur(s) a 40.", values_superior(mycol,40) );
+    printf("\nIl y a %d nombre(s) inferieur(s) a 40.", values_inferior(mycol,40) );
+    printf("\nIl y a %d nombre(s) egale(s) a 40.", values_equal(mycol,40) );
     return 0;
 }

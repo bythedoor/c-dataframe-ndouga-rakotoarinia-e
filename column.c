@@ -69,14 +69,14 @@ void print_col(COLUMN* col) {
     }
 }
 
-int nbr_occurences(COLUMN *col, int value) {
-    int x = 0;
+int nbr_occurences(COLUMN *col, int x) {
+    int count = 0;
     for (int i = 0; i < col->t_log; ++i) {
-        if (*(col->data[i]) == value) {
-            x++;
+        if (*(col->data[i]) == x) {
+            count++;
         }
     }
-    return x;
+    return count;
 }
 
 

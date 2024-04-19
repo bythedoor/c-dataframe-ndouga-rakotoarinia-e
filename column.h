@@ -16,7 +16,7 @@ int insert_value(COLUMN* col, int value);
 
 void print_col(COLUMN* col);
 
-int nbr_occurences(COLUMN *col, int value);
+int nbr_occurences(COLUMN *col, int x);
 
 int get_values(COLUMN *col, int x);
 
