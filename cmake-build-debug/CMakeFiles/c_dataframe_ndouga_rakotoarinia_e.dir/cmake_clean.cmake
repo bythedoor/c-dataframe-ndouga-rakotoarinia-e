@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.obj"
+  "CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.obj.d"
   "CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/column.c.obj"
   "CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/column.c.obj.d"
   "CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/dataframe.c.obj"
