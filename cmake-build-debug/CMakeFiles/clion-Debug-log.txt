@@ -9,5 +9,14 @@ CMake Deprecation Warning:
 
 
 -- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/cmake-build-debug
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    dataframe.h
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: c_dataframe_ndouga_rakotoarinia_e
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

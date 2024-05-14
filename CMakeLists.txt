@@ -10,4 +10,8 @@ add_executable(c_dataframe_ndouga_rakotoarinia_e main.c
         dataframe.h
         main.c
         cdataframe.h
-        cdataframe.c)
+        cdataframe.c
+        liste.h
+        liste.c
+        sort.h
+        sort.c)
