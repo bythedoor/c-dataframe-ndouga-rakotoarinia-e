@@ -25,4 +25,7 @@ int values_superior(COLUMN *col, int x);
 int values_inferior(COLUMN *col, int x);
 
 int values_equal(COLUMN *col, int x);
+
+void delete_column(COLUMN **col);
+
 #endif //C_DATAFRAME_NDOUGA_RAKOTOARINIA_E_COLUMN_H

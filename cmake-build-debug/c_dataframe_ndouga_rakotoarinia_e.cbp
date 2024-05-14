@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/cdataframe.c">
+			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
+		</Unit>
+		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/cdataframe.h">
+			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
+		</Unit>
 		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/column.c">
 			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
 		</Unit>
