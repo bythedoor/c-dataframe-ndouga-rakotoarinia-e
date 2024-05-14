@@ -176,30 +176,6 @@ column.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/column.c.s
 .PHONY : column.c.s
 
-dataframe.obj: dataframe.c.obj
-.PHONY : dataframe.obj
-
-# target to build an object file
-dataframe.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/dataframe.c.obj
-.PHONY : dataframe.c.obj
-
-dataframe.i: dataframe.c.i
-.PHONY : dataframe.i
-
-# target to preprocess a source file
-dataframe.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/dataframe.c.i
-.PHONY : dataframe.c.i
-
-dataframe.s: dataframe.c.s
-.PHONY : dataframe.s
-
-# target to generate assembly for a file
-dataframe.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/dataframe.c.s
-.PHONY : dataframe.c.s
-
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -239,9 +215,6 @@ help:
 	@echo ... column.obj
 	@echo ... column.i
 	@echo ... column.s
-	@echo ... dataframe.obj
-	@echo ... dataframe.i
-	@echo ... dataframe.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

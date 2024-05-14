@@ -8,7 +8,6 @@ add_executable(c_dataframe_ndouga_rakotoarinia_e main.c
         column.c
         column.c
         dataframe.h
-        dataframe.c
         main.c
         cdataframe.h
         cdataframe.c)
