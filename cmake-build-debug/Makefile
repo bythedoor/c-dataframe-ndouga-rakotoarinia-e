@@ -176,6 +176,30 @@ column.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/column.c.s
 .PHONY : column.c.s
 
+liste.obj: liste.c.obj
+.PHONY : liste.obj
+
+# target to build an object file
+liste.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj
+.PHONY : liste.c.obj
+
+liste.i: liste.c.i
+.PHONY : liste.i
+
+# target to preprocess a source file
+liste.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.i
+.PHONY : liste.c.i
+
+liste.s: liste.c.s
+.PHONY : liste.s
+
+# target to generate assembly for a file
+liste.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.s
+.PHONY : liste.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -200,6 +224,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/main.c.s
 .PHONY : main.c.s
 
+sort.obj: sort.c.obj
+.PHONY : sort.obj
+
+# target to build an object file
+sort.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj
+.PHONY : sort.c.obj
+
+sort.i: sort.c.i
+.PHONY : sort.i
+
+# target to preprocess a source file
+sort.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.i
+.PHONY : sort.c.i
+
+sort.s: sort.c.s
+.PHONY : sort.s
+
+# target to generate assembly for a file
+sort.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\build.make CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.s
+.PHONY : sort.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -215,9 +263,15 @@ help:
 	@echo ... column.obj
 	@echo ... column.i
 	@echo ... column.s
+	@echo ... liste.obj
+	@echo ... liste.i
+	@echo ... liste.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... sort.obj
+	@echo ... sort.i
+	@echo ... sort.s
 .PHONY : help
 
 
