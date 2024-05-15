@@ -90,10 +90,19 @@
 		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/column.h">
 			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
 		</Unit>
-		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/dataframe.h">
+		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/liste.c">
+			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
+		</Unit>
+		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/liste.h">
 			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
 		</Unit>
 		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/main.c">
+			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
+		</Unit>
+		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/sort.c">
+			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
+		</Unit>
+		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/sort.h">
 			<Option target="c_dataframe_ndouga_rakotoarinia_e"/>
 		</Unit>
 		<Unit filename="C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/CMakeLists.txt">
