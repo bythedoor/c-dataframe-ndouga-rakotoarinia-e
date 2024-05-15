@@ -110,11 +110,41 @@ CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\cdataframe.c -o CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\cdataframe.c.s
 
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/flags.make
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj: C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/liste.c
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj -MF CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\liste.c.obj.d -o CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\liste.c.obj -c C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\liste.c
+
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\liste.c > CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\liste.c.i
+
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\liste.c -o CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\liste.c.s
+
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/flags.make
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj: C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/sort.c
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj -MF CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\sort.c.obj.d -o CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\sort.c.obj -c C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\sort.c
+
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\sort.c > CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\sort.c.i
+
+CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\sort.c -o CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\sort.c.s
+
 # Object files for target c_dataframe_ndouga_rakotoarinia_e
 c_dataframe_ndouga_rakotoarinia_e_OBJECTS = \
 "CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/main.c.obj" \
 "CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/column.c.obj" \
-"CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.obj"
+"CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.obj" \
+"CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj" \
+"CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj"
 
 # External object files for target c_dataframe_ndouga_rakotoarinia_e
 c_dataframe_ndouga_rakotoarinia_e_EXTERNAL_OBJECTS =
@@ -122,11 +152,13 @@ c_dataframe_ndouga_rakotoarinia_e_EXTERNAL_OBJECTS =
 c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/main.c.obj
 c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/column.c.obj
 c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.obj
+c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/liste.c.obj
+c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/sort.c.obj
 c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/build.make
 c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/linkLibs.rsp
 c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/objects1.rsp
 c_dataframe_ndouga_rakotoarinia_e.exe: CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable c_dataframe_ndouga_rakotoarinia_e.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Kimberley\CLionProjects\c-dataframe-ndouga-rakotoarinia-e\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable c_dataframe_ndouga_rakotoarinia_e.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\c_dataframe_ndouga_rakotoarinia_e.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
