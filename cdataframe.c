@@ -7,4 +7,7 @@
 #include "column.h"
 #include "cdataframe.h"
 
+CDATAFRAME *create_cdataframe(ENUM_TYPE *cdftype, int size) {
+    //création tête du ddataframe
 
+}
