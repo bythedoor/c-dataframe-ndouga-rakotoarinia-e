@@ -1,14 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "column.h"
-/*
-COLUMN *create_column(char* title)
-{
-    COLUMN c = {*title, 256, 0, {}};
-    COLUMN* c_ptr = NULL;
-    return c_ptr;
-}
-*/
 
 COLUMN *create_column(char* title) {
     COLUMN *c_ptr = (COLUMN *)malloc(sizeof(COLUMN)); //permet d'allouer de la mémoire pour la colonne
@@ -18,6 +10,7 @@ COLUMN *create_column(char* title) {
     //affecte les différents paramètres de la colonne
     c_ptr->title = *title;
     c_ptr->t_phys = REALOC_SIZE;
+    //c_ptr->data = (int*) malloc(REALOC_SIZE*sizeof(int));
     c_ptr->t_log = 0;
 
     //initialise tous les pointeurs de données à NULL
@@ -29,7 +22,7 @@ COLUMN *create_column(char* title) {
 }
 int insert_value(COLUMN *col, int value) {
     if (*col->data == NULL) {
-        *col->data = (int *) malloc(REALOC_SIZE * sizeof(int *));
+        *col->data = (int**)malloc(REALOC_SIZE * sizeof(int **));
         if (col->data == NULL) {
             return 0;
         }
@@ -38,7 +31,7 @@ int insert_value(COLUMN *col, int value) {
 
     if (col->t_log >= col->t_phys) {
         int nouvelle_taille = col->t_phys + REALOC_SIZE;
-        int **nouveau_tableau =(int **)realloc(col->data, nouvelle_taille * sizeof(int *));
+        int **nouveau_tableau =(int **) realloc(col->data, nouvelle_taille * sizeof(int *));
         if (nouveau_tableau == NULL) {
             return 0;
         }
@@ -63,8 +56,9 @@ void print_col(COLUMN* col) {
         return;
     }
     else {
-        for (int i = 0; i < col->t_log; ++i) {
-            printf("[%d] %d\n", i, *(col->data[i]));
+        printf("%c \n", col->title);
+        for (int i = 0; i < (*col).t_log; ++i) {
+            printf("[%d] %d\n", i, *col->data[i]);
         }
     }
 }
@@ -115,4 +109,9 @@ int values_equal(COLUMN *col, int x) {
         }
     }
     return count;
+}
+
+void delete_column(COLUMN **col) {
+    free(*col);
+    *col = NULL;
 }

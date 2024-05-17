@@ -4,14 +4,16 @@
 #include "cdataframe.h"
 
 int main() {
-    /*
     //Pour les colonnes
     COLUMN *mycol = create_column("My column");
     insert_value(mycol, 52);
     insert_value(mycol, 44);
     insert_value(mycol, 15);
     print_col(mycol);
+    delete_column(&mycol);
+    print_col(mycol);
 
+    /*
     int x;
     printf("Quel est le nombre que vous voulez comparer?");
     scanf("%d",&x);
@@ -23,9 +25,12 @@ int main() {
     int position;
     printf("\nQuel est la position de la valeur que vous voulez connaitre?");
     scanf("%d",&position);
-    printf("\nLe nombre %d se trouve a la position %d", get_values(mycol, position),position);*/
+    printf("\nLe nombre %d se trouve a la position %d", get_values(mycol, position),position);
 
     //Pour le cdataframe
     ENUM_TYPE cdftype [] = {INT,CHAR,INT};
     CDATAFRAME *cdf = create_cdataframe(cdftype, 3);
+
+    delete_cdataframe(&cdf); */
+    return 0;
 }
