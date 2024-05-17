@@ -27,5 +27,7 @@ int main() {
 
     //Pour le cdataframe
     ENUM_TYPE cdftype [] = {INT,CHAR,INT};
-    CDATAFRAME *cdf = create_cdataframe(cdftype, 3);
+    CDATAFRAME *cdf = create_cdataframe(cdftype,3);
+    return 0;
+
 }
