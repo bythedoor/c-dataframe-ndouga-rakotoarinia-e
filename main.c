@@ -35,7 +35,7 @@ int main() {
     ENUM_TYPE cdftype[] = {INT, CHAR};
     CDATAFRAME *cdf = create_cdataframe(cdftype, 2);
 
-    int x;
+   /*int x;
     printf("Quel est le nombre que vous voulez comparer?");
     scanf("%d",&x);
     printf("Le nombre d'occurence de %d est %d.",x,nbr_occurences(mycol, x));
@@ -47,6 +47,6 @@ int main() {
     printf("\nQuel est la position de la valeur que vous voulez connaitre?");
     scanf("%d",&position);
     printf("\nLe nombre %d se trouve a la position %d", get_values(mycol, position),position);
-
+*/
     //Pour le cdataframe
 }
