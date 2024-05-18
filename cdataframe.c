@@ -17,59 +17,44 @@ CDATAFRAME *create_cdataframe(ENUM_TYPE *cdftype, int size) {
     LNODE* tail = lst_create_lnode(cdftype);
 
     //intégration de la tête et de la queue dans la liste chaînée
-    list->head = head;
-    list->tail = tail;
+    lst_insert_head(list, head);
+    lst_insert_tail(list, tail);
 
     //création d'une liste chaînée de taille size
     LNODE* temp = head;
     for (int i = 0; i < size; ++i) {
-        LNODE *new = lst_create_lnode(cdftype);
-        while (temp->next != NULL) {
-            temp = temp->next;
-        }
-        temp->prev = temp;
-        temp->next = new;
+        LNODE* lnew = lst_create_lnode(cdftype);
+        lst_insert_after(list, lnew, lnew->prev);
     }
+    return list;
 }
 
-void delete_column2(CDATAFRAME *cdf, char *col_name) {
-    // Déclaration d'un pointeur vers le nœud actuel pour parcourir la liste chaînée
-    LNODE *current = cdf->head;
 
-    // Parcours de la liste chaînée
-    while (current != NULL) {
-        // Vérification si le nom de la colonne correspond
-        // (Assumez que le nom de la colonne est stocké dans un champ "nom" de la structure ENUM_TYPE)
-        if (strcmp(col_name, current->data->nom) == 0) {
-            // Si le nom de la colonne correspond, nous avons trouvé la colonne à supprimer
+void delete_cdataframe(CDATAFRAME **cdf) {
+    // création variable temporaire
+    LNODE *temp = (*cdf)->head;
 
-            // Récupération des nœuds précédent et suivant pour le nœud actuel
-            LNODE *prev_node = current->prev;
-            LNODE *next_node = current->next;
+    while (temp->next != NULL) {
+        //suppression de la colonne dans le node
+        delete_column(temp->data);
 
-            // Mise à jour des pointeurs des nœuds voisins pour "sauter" le nœud actuel
-            if (prev_node != NULL) {
-                prev_node->next = next_node;
-            } else {
-                // Si le nœud actuel est la tête de la liste, mettez à jour la tête
-                cdf->head = next_node;
-            }
+        //suppression du node
+        *temp = *temp->next;
+        lst_delete_lnode(*cdf, (*cdf)->head);
 
-            if (next_node != NULL) {
-                next_node->prev = prev_node;
-            } else {
-                // Si le nœud actuel est la queue de la liste, mettez à jour la queue
-                cdf->tail = prev_node;
-            }
+    }
+    lst_erase(*cdf);
+}
 
-            // Libération de la mémoire occupée par le nœud actuel
-            free(current);
 
-            // Sortie de la fonction après la suppression
-            return;
+void print_cdataframe(CDATAFRAME **cdf) {
+    if (*cdf == NULL) {
+        printf("Le dataframe est vide.\n");
+        return;
+    } else {
+        LNODE *temp = (*cdf)->head;
+        while (temp->next != NULL) {
+            print_col(temp->data);
         }
-
-        // Passage au nœud suivant dans la liste chaînée
-        current = current->next;
     }
 }

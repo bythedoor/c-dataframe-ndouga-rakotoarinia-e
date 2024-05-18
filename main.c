@@ -4,13 +4,36 @@
 #include "cdataframe.h"
 
 int main() {
-    /*
-    //Pour les colonnes
-    COLUMN *mycol = create_column("My column");
-    insert_value(mycol, 52);
-    insert_value(mycol, 44);
-    insert_value(mycol, 15);
-    print_col(mycol);
+    char titre[100];
+    int valeur;
+
+    printf("Entrez le titre de la colonne: ");
+    gets(titre); //permet de récupérer le titre avec les espace compris
+
+    COLUMN *mycol = create_column(titre);
+
+    if (mycol != NULL) {
+        printf("Column title: %s\n", mycol->title);
+        printf("Entrez les valeurs a inserer (-1 pour terminer la saisie) :\n");
+        while (1) {
+            printf("Valeur: ");
+            scanf("%d", &valeur);
+            if (valeur == -1) {
+                break;
+            }
+            insert_value(mycol, valeur);
+        }
+        printf("Colonne : %s\n", mycol->title);
+        for (int i = 0; i < mycol->t_log; ++i) {
+            printf("[%d] %d\n", i, *mycol->data[i]);
+        }
+
+        free_column(mycol);
+    }
+
+
+    ENUM_TYPE cdftype[] = {INT, CHAR};
+    CDATAFRAME *cdf = create_cdataframe(cdftype, 2);
 
     int x;
     printf("Quel est le nombre que vous voulez comparer?");
@@ -23,11 +46,7 @@ int main() {
     int position;
     printf("\nQuel est la position de la valeur que vous voulez connaitre?");
     scanf("%d",&position);
-    printf("\nLe nombre %d se trouve a la position %d", get_values(mycol, position),position);*/
+    printf("\nLe nombre %d se trouve a la position %d", get_values(mycol, position),position);
 
     //Pour le cdataframe
-    ENUM_TYPE cdftype [] = {INT,CHAR,INT};
-    CDATAFRAME *cdf = create_cdataframe(cdftype,3);
-    return 0;
-
 }

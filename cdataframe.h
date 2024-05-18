@@ -10,6 +10,9 @@
 
 CDATAFRAME *create_cdataframe(ENUM_TYPE *cdftype, int size);
 
-void delete_column2(CDATAFRAME *cdf, char *col_name);
+void delete_cdataframe(CDATAFRAME **cdf);
+
+void print_cdataframe(CDATAFRAME **cdf);
+
 
 #endif //C_DATAFRAME_NDOUGA_RAKOTOARINIA_E_CDATAFRAME_H

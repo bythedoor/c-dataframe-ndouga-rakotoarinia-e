@@ -19,8 +19,10 @@ CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/cdataframe.c.obj: C:/Users/Rako
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/string.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
   C:/Users/Rakoto/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/cdataframe.h \
@@ -45,8 +47,10 @@ CMakeFiles/c_dataframe_ndouga_rakotoarinia_e.dir/column.c.obj: C:/Users/Rakoto/C
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/string.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
   C:/Users/Rakoto/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/column.h
@@ -147,6 +151,8 @@ C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include
 
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
 
+C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h:
+
 C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/stdlib.h:
 
 C:/Users/Rakoto/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/main.c:
@@ -164,7 +170,5 @@ C:/Users/Rakoto/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/column.h:
 C:/Users/Rakoto/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/column.c:
 
 C:/Users/Rakoto/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/liste.c:
-
-C:/Program\ Files/JetBrains/CLion\ 2023.3.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h:
 
 C:/Users/Rakoto/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/sort.c:

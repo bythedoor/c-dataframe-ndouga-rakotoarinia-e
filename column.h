@@ -4,13 +4,14 @@
 #define REALOC_SIZE 256
 
 typedef struct{
-    char title;
+    char *title;
     int t_phys;
     int t_log;
     int* data[REALOC_SIZE];
 }COLUMN;
 
 COLUMN *create_column(char* title);
+void free_column(COLUMN *col);
 
 int insert_value(COLUMN* col, int value);
 
