@@ -13,6 +13,9 @@ int main() {
     delete_column(&mycol);
     print_col(mycol);
 
+    ENUM_TYPE cdftype[] = {INT, CHAR};
+    CDATAFRAME *cdf = create_cdataframe(cdftype, 2);
+
     /*
     int x;
     printf("Quel est le nombre que vous voulez comparer?");
