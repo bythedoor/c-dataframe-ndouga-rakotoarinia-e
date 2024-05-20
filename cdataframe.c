@@ -59,7 +59,82 @@ void print_cdataframe(CDATAFRAME **cdf) {
     }
 }
 
-void delete_column_cdataframe(CDATAFRAME *cdf, char *col_name) {
+void print_cdataframe_rows(CDATAFRAME **cdf, int* start, int* end) {
+    if (*cdf == NULL) {
+        printf("La liste est vide");
+        return;
+    }
+    else {
+        LNODE *pos_node = (*cdf)->head;
+        while (pos_node->next != NULL) {
+            pos_node->data[pos] = *values[pos];
+            pos_node = get_next_node(*cdf, pos_node);
+        }
+    }
+}
+
+void print_cdataframe_col(CDATAFRAME **cdf, int* start, int* end) {
+    if (*cdf == NULL) {
+        printf("Le dataframe est vide.\n");
+        return;
+    }
+    else {
+        LNODE *temp = (*cdf)->head;
+        while (temp->next != NULL) {
+            print_col(temp->data);
+            temp = get_next_node(*cdf, temp);
+        }
+    }
+}
+
+void add_row(CDATAFRAME **cdf, int* values[], int pos) {
+    if (*cdf == NULL) {
+        printf("test");
+        return;
+    }
+    else {
+        LNODE *pos_node = (*cdf)->head;
+        while (pos_node->next != NULL) {
+            pos_node->data[pos] = *values[pos];
+            pos_node = get_next_node(*cdf, pos_node);
+        }
+    }
+}
+
+void delete_row(CDATAFRAME **cdf, int pos) {
+    if (*cdf == NULL) {
+        printf("test");
+    }
+    else {
+        LNODE *pos_node = (*cdf)->head;
+        for (int i=0; i < pos; i++) {
+            pos_node = get_next_node( *cdf, pos_node);
+        }
+        lst_delete_lnode(*cdf, pos_node);
+    }
+}
+
+void add_col(CDATAFRAME** cdf, void *values, int pos) {
+    if (*cdf == NULL) {
+        printf("test");
+    }
+    else {
+        // création d'un nouveau node
+        LNODE *new = lst_create_lnode(values);
+
+        // on itialise la position d'insertion à la tête de la liste
+        LNODE *pos_node = (*cdf)->head;
+        //on parcourt la liste jusqu'à la position (pos) indiquée
+        for (int i=0; i < pos; i++) {
+            pos_node = get_next_node( *cdf, pos_node);
+        }
+        // on insert la colonne dans le tableau
+        lst_insert_after(*cdf, new,pos_node);
+    }
+}
+
+//jennifer's part
+void delete_col(CDATAFRAME *cdf, char *col_name) {
     // Vérifier si la liste est vide
     if (cdf->head == NULL || cdf->head->next == NULL) {
         printf("Le dataframe est vide ou ne contient qu'une seule colonne.\n");

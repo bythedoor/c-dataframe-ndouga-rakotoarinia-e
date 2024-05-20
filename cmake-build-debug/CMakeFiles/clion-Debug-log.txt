@@ -8,6 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.1s)
--- Generating done (0.1s)
+-- Configuring done (0.7s)
+-- Generating done (0.4s)
 -- Build files have been written to: C:/Users/Kimberley/CLionProjects/c-dataframe-ndouga-rakotoarinia-e/cmake-build-debug

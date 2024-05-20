@@ -25,7 +25,7 @@ union column_type{
 typedef union column_type COL_TYPE ;
 
 typedef struct LNODE_ {
-    void *data;
+    int *data;
     struct LNODE_ *prev;
     struct LNODE_ *next;
 } LNODE;
