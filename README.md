@@ -5,7 +5,7 @@ Jennifer RAKOTOARINIA \
 Kimberley NDOUGA
 ## Instructions
 Lorsque l'utilisateur lance le programme, il peut créer un dataframe
-en utilisant la fonction create_cdataframe(). Cette fonction prend en paramètre la taille mais aussi le type de données. Une fois la colonne créée, il peut la remplir à l'aide des fonctions add_col() et add_rows(), puis l'afficher avec print_cdataframe(). 
+en utilisant la fonction create_cdataframe(). Cette fonction prend en paramètre la taille mais aussi le type de données. Une fois le dataframe créé, il peut le remplir à l'aide des fonctions add_col() et add_rows(), puis l'afficher avec print_cdataframe(). 
 
 L'utilisateur peut désormais effectuer plusieurs actions sur le dataframe :
 * supprimer des colonnes et des lignes
