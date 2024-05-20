@@ -133,8 +133,9 @@ void add_col(CDATAFRAME** cdf, void *values, int pos) {
     }
 }
 
-//jennifer's part
-void delete_col(CDATAFRAME *cdf, char *col_name) {
+//fonction pour supprimer une colonne dans le dataframe
+//prend en paramètre le cdataframe et le titre de la colonne qu'on souhaite supprimer
+void delete_column_cdataframe(CDATAFRAME *cdf, char *col_name) {
     // Vérifier si la liste est vide
     if (cdf->head == NULL || cdf->head->next == NULL) {
         printf("Le dataframe est vide ou ne contient qu'une seule colonne.\n");
@@ -151,7 +152,8 @@ void delete_col(CDATAFRAME *cdf, char *col_name) {
         return;
     }
 
-    // Trouver le nœud de la colonne à supprimer
+    // Dans le cas où on supprime pas la première colonne
+    //On trouve le nœud de la colonne à supprimer
     LNODE *prev_node = cdf->head;
     LNODE *current_node = prev_node->next;
     while (current_node != NULL) {
@@ -163,7 +165,7 @@ void delete_col(CDATAFRAME *cdf, char *col_name) {
             // Supprimer le nœud de la liste chaînée
             lst_delete_lnode(cdf, current_node);
 
-            // Si la colonne supprimée est la dernière colonne, mettre à jour la queue
+            // Si la colonne supprimée est la dernière colonne, on metà jour la queue
             if (current_node->next == NULL) {
                 cdf->tail = prev_node;
             }
@@ -179,8 +181,8 @@ void delete_col(CDATAFRAME *cdf, char *col_name) {
     printf("La colonne '%s' n'a pas été trouvée dans le dataframe.\n", col_name);}
 
 
-
-int get_cdataframe_cols_size(CDATAFRAME *cdf) {
+//fonction pour avoir le nombre de colonnes dans la cdataframe
+int count_cdataframe_col(CDATAFRAME *cdf) {
     if (cdf == NULL || cdf->head == NULL) {
         return 0;
     }
@@ -193,27 +195,28 @@ int get_cdataframe_cols_size(CDATAFRAME *cdf) {
         current_node = current_node->next;
     }
 
-    // Soustraire 2 pour exclure la tête et la queue de la liste chaînée
+    // Soustrait 2 pour exclure la tête et la queue de la liste chaînée
     return count - 2;
 }
 
+//fonction pour renomer le titre d'une colonne dans le cdataframe
 void rename_column_title(CDATAFRAME *cdf, char *old_title, char *new_title) {
     LNODE *temp = cdf->head;  // Début de la liste
 
-    // Parcourir tous les nœuds de la liste
+    // Parcourt tous les nœuds de la liste
     while (temp != NULL) {
-        COLUMN *col = (COLUMN *)temp->data;  // Obtenir la colonne à partir du nœud
+        COLUMN *col = (COLUMN *)temp->data;
 
-        // Comparer le titre de la colonne avec l'ancien titre
+        // Compare le titre de la colonne avec l'ancien titre
         if (strcmp(col->title, old_title) == 0) {
-            // Allouer de la mémoire pour le nouveau titre
+            // Alloue de la mémoire pour le nouveau titre
             col->title = (char *)malloc(strlen(new_title) + 1);
             if (col->title == NULL) {
                 printf("Erreur lors de l'allocation de mémoire pour le nouveau titre.\n");
                 return;
             }
 
-            // Copier le nouveau titre dans l'espace alloué
+            // Copie le nouveau titre dans l'espace alloué
             strcpy(col->title, new_title);
 
             printf("Le titre de la colonne a été renommé avec succès.\n");
@@ -227,6 +230,8 @@ void rename_column_title(CDATAFRAME *cdf, char *old_title, char *new_title) {
     printf("La colonne avec l'ancien titre n'a pas été trouvée.\n");
 }
 
+//cherche une valeur dans de cdataframe
+//prends en paramètre le cdt et la valeur qu'on cherche
 int value_in_cdataframe(CDATAFRAME *cdf, int value) {
     if (cdf == NULL || cdf->head == NULL) {
         return 0;
@@ -235,7 +240,7 @@ int value_in_cdataframe(CDATAFRAME *cdf, int value) {
     LNODE *col_node = cdf->head;
     while (col_node != NULL) {
         COLUMN *col = (COLUMN *)col_node->data;
-        if (nbr_occurences(col, value) > 0) {
+        if (nbr_occurences(col, value) > 0) { //appelle la fonction qu'on a déjà utiliser pour les colonnes
             return 1;
         }
         col_node = col_node->next;
@@ -243,6 +248,7 @@ int value_in_cdataframe(CDATAFRAME *cdf, int value) {
     return 0;
 }
 
+//conte le nombre de ligne dans le cdataframe
 int count_cdataframe_rows(CDATAFRAME *cdf) {
     if (cdf == NULL || cdf->head == NULL) {
         return 0;
@@ -270,12 +276,13 @@ int count_cdataframe_col(CDATAFRAME *cdf) {
 
     return count;}
 
-
+//fonction qui affiche le nombre de valeurs égale à x
+//prends en paramètre le cdt et la valeur x qu'on donne
 int values_equal_cdataframe(CDATAFRAME *cdf, int x) {
     int count = 0;
     LNODE *col_node = cdf->head;
 
-    // Parcours de la liste chaînée de colonnes
+    // Parcours la liste chaînée de colonnes
     while (col_node != NULL) {
         COLUMN *col = (COLUMN *)col_node->data;
         if (col != NULL) {
@@ -287,6 +294,8 @@ int values_equal_cdataframe(CDATAFRAME *cdf, int x) {
     return count;
 }
 
+//fonction qui affiche le nombre de valeurs supérieur à x
+//prends en paramètre le cdt et la valeur x qu'on donne
 int values_superior_cdataframe(CDATAFRAME *cdf, int x) {
 
     int count = 0;
@@ -304,6 +313,8 @@ int values_superior_cdataframe(CDATAFRAME *cdf, int x) {
     return count;
 }
 
+//fonction qui affiche le nombre de valeurs inférieur à x
+//prends en paramètre le cdt et la valeur x qu'on donne
 int values_inferior_cdataframe(CDATAFRAME *cdf, int x) {
 
     int count = 0;
