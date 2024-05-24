@@ -47,7 +47,7 @@ void delete_cdataframe(CDATAFRAME **cdf) {
     lst_erase(*cdf);
 }
 
-/*
+
 void print_cdataframe(CDATAFRAME **cdf) {
     if (*cdf == NULL) {
         printf("Le dataframe est vide.\n");
@@ -338,5 +338,3 @@ int values_inferior_cdataframe(CDATAFRAME *cdf, int x) {
 
     return count;
 }
-
- */

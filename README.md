@@ -19,4 +19,4 @@ https://github.com/bythedoor/c-dataframe-ndouga-rakotoarinia-e
 
 ## Bugs
 * Les fonctions pour créer un CDataframe sont encore en construction ou ne marchent pas correctement
-* Le dataframe ne peut qu'accepter que des entiers comme valeur
+* Problème au niveau de l'insertion de différents types de données
