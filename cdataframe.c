@@ -8,6 +8,7 @@
 #include "cdataframe.h"
 #define bool true 1 false 0
 
+
 CDATAFRAME *create_cdataframe(ENUM_TYPE *cdftype, int size) {
     //création du dataframe sous forme d'une liste chaînée
     LIST* list = lst_create_list();
@@ -46,7 +47,7 @@ void delete_cdataframe(CDATAFRAME **cdf) {
     lst_erase(*cdf);
 }
 
-
+/*
 void print_cdataframe(CDATAFRAME **cdf) {
     if (*cdf == NULL) {
         printf("Le dataframe est vide.\n");
@@ -54,8 +55,11 @@ void print_cdataframe(CDATAFRAME **cdf) {
     } else {
         LNODE *temp = (*cdf)->head;
         while (temp->next != NULL) {
-            print_col(temp->data);
+            printf("%d", temp->data[1]);
         }
+        for (int i = 0; i < 2; i++)
+            print_col("%d \n", (*cdf)->data);
+
     }
 }
 
@@ -67,7 +71,7 @@ void print_cdataframe_rows(CDATAFRAME **cdf, int* start, int* end) {
     else {
         LNODE *pos_node = (*cdf)->head;
         while (pos_node->next != NULL) {
-            pos_node->data[pos] = *values[pos];
+            pos_node->data[0] = 1;
             pos_node = get_next_node(*cdf, pos_node);
         }
     }
@@ -130,6 +134,7 @@ void add_col(CDATAFRAME** cdf, void *values, int pos) {
         }
         // on insert la colonne dans le tableau
         lst_insert_after(*cdf, new,pos_node);
+        printf("test");
     }
 }
 
@@ -264,6 +269,7 @@ int count_cdataframe_rows(CDATAFRAME *cdf) {
     return row_count;
 }
 
+
 int count_cdataframe_col(CDATAFRAME *cdf) {
     int count = 0;
     LNODE *current_node = cdf->head;
@@ -275,6 +281,7 @@ int count_cdataframe_col(CDATAFRAME *cdf) {
     }
 
     return count;}
+
 
 //fonction qui affiche le nombre de valeurs égale à x
 //prends en paramètre le cdt et la valeur x qu'on donne
@@ -331,3 +338,5 @@ int values_inferior_cdataframe(CDATAFRAME *cdf, int x) {
 
     return count;
 }
+
+ */

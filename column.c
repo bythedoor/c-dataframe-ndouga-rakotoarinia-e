@@ -2,96 +2,166 @@
 #include <stdlib.h>
 #include "column.h"
 #include "string.h"
-#define REALOC_SIZE 256
-/*
-COLUMN *create_column(char* title)
-{
-    COLUMN c = {*title, 256, 0, {}};
-    COLUMN* c_ptr = NULL;
-    return c_ptr;
-}
-*/
 
-COLUMN *create_column(char* title) {
-    COLUMN *c_ptr = (COLUMN *)malloc(sizeof(COLUMN)); // Alloue de la mémoire pour la colonne
-    if (c_ptr == NULL) {
+COLUMN *create_column(ENUM_TYPE type, char* title) {
+    COLUMN *col = (COLUMN *)malloc(sizeof(COLUMN)); // Alloue de la mémoire pour la colonne
+    if (col == NULL) {
         return NULL;
     }
 
     // Alloue de la mémoire pour le titre et copie la chaîne de caractères
-    c_ptr->title = (char *)malloc(strlen(title) + 1); // +1 pour le caractère nul de fin de chaîne
-    if (c_ptr->title == NULL) {
-        free(c_ptr);
+    col->title = (char *)malloc(strlen(title) + 1); // +1 pour le caractère nul de fin de chaîne
+    if (col->title == NULL) {
+        free(col);
         return NULL;
     }
-    strcpy(c_ptr->title, title);
+    strcpy(col->title, title);
 
-    c_ptr->t_phys = REALOC_SIZE;
-    c_ptr->t_log = 0;
+    //Intialisation des tailles physique et logique
+    col->max_size = REALOC_SIZE;
+    col->size = 0;
 
-    // Initialise tous les pointeurs de données à NULL
+    //Alloue de la mémoire pour les pointeurs des valeurs du tableau
+    col->data = (COL_TYPE **)malloc(REALOC_SIZE * sizeof(COL_TYPE *));
+
+    //Initialisation du type de données de la colonne
+    col->column_type = type;
+
+    //Initialise tous les pointeurs de données à NULL
     for (int i = 0; i < REALOC_SIZE; ++i) {
-        c_ptr->data[i] = NULL;
+        col->data[i] = NULL;
+    }
+    return col;
+}
+
+int insert_value(COLUMN *col, void *value) {
+    // insertion dans un tableau vide
+    if (*col->data == NULL) {
+        col->data = (COL_TYPE **)malloc(REALOC_SIZE * sizeof(COL_TYPE *));
+        if (col->data == NULL) {
+            return 1;
+        }
+        col->max_size = REALOC_SIZE;
     }
 
-    return c_ptr;
-}
-int insert_value(COLUMN *col, int value) {
-    if (*col->data == NULL) {
-        *col->data = (int**)malloc(REALOC_SIZE * sizeof(int **));
+    // insertion dans un tableau rempli au maximum
+    if (col->size >= col->max_size) {
+        col->max_size =+ REALOC_SIZE;
+        col->data =(COL_TYPE **) realloc(col->data, col->max_size * sizeof(COL_TYPE **));
         if (col->data == NULL) {
-            return 0;
+            return 1;
         }
-        col->t_phys = REALOC_SIZE;
     }
-    if (col->t_log >= col->t_phys) {
-        int nouvelle_taille = col->t_phys + REALOC_SIZE;
-        int **nouveau_tableau =(int **) realloc(col->data, nouvelle_taille * sizeof(int *));
-        if (nouveau_tableau == NULL) {
-            return 0;
-        }
-        *col->data = nouveau_tableau;
-        col->t_phys = nouvelle_taille;
+
+    COL_TYPE a;
+    // insertion de la valeur en fonction du type
+    switch(col->column_type){
+        case NULLVAL:
+            col->data[col->size] = "NULL";
+            break;
+        case UINT:
+            col->data[col->size] = (a*)malloc(sizeof(a));
+            *((unsigned int*)col->data[col->size])= *((unsigned int*)value);
+            break;
+        case INT:
+            col->data[col->size] = (int*)malloc(sizeof(int));
+            *((int*)col->data[col->size])= *((int*)value);
+            break;
+        case CHAR:
+            col->data[col->size] = (char *)malloc(sizeof(char));
+            *((char*)col->data[col->size])= *((char*)value);
+            break;
+        case FLOAT:
+            col->data[col->size] = (char *)malloc(sizeof(char));
+            *((char*)col->data[col->size])= *((char*)value);
+            break;
+        case DOUBLE:
+            col->data[col->size] = (char *)malloc(sizeof(char));
+            *((char*)col->data[col->size])= *((char*)value);
+            break;
+        case STRING:
+            col->data[col->size] = (char *)malloc(sizeof(char));
+            *((char*)col->data[col->size])= *((char*)value);
+            break;
+        case STRUCTURE:
+            col->data[col->size] = (char *)malloc(sizeof(char));
+            *((char*)col->data[col->size])= *((char*)value);
+            break;
     }
-    col->data[col->t_log] = (int *)malloc(sizeof(int)); // Alloue de la mémoire pour la valeur
-    if (col->data[col->t_log] == NULL) {
+    if (col->data[col->size] == NULL) {
         return 0;
     }
+    col->size++;
 
-    *col->data[col->t_log] = value;
-    col->t_log++;
-
-    return 1;
+    return 0;
 }
-void free_column(COLUMN *col) {
-    if (col == NULL) {
+
+void delete_column(COLUMN **col) {
+    free((*col)->title); //suppression du titre de la mémoire
+    free((*col)->data);
+    free((*col)->index);
+    free(*col); //suppression du tableau de pointeur
+    *col = NULL; //réintialisation du pointeur de la colonne à NULL
+}
+
+void convert_value(COLUMN *col, unsigned long long int i, char *str, int size){
+    if(i >= col->size){
+        printf("error : out of bound");
+    }
+    switch(col->column_type){
+        case INT:
+            snprintf(str, size, "%d", *((int *)(col->data[i])));
+            break;
+        case UINT:
+            snprintf(str, size, "%u", *((unsigned int *)col->data[i]));
+            break;
+        case CHAR:
+            if(col->data[i] == NULL){
+                snprintf(str, size, "NULL");
+            }
+            else {
+                snprintf(str, size, "%c", *((char *) col->data[i]));
+            }
+            break;
+        case FLOAT:
+            snprintf(str, size, "%f", *((float *)col->data[i]));
+            break;
+        case DOUBLE:
+            snprintf(str, size, "%lf", *((double *)col->data[i]));
+            break;
+        case STRING:
+            if(col->data[i] == NULL){
+                snprintf(str, size, "NULL");
+            }
+            else{
+                strncpy(str, (char *)col->data[i], size-1);
+                str[size-1] = '\0';
+            }
+            break;
+        default:
+            printf("error display type");
+    }
+}
+
+void print_col(COLUMN* col){
+    if(col == NULL){
+        printf("Error pointer null");
         return;
     }
-    // Libère la mémoire allouée pour le titre
-    free(col->title);
-    // Libère la mémoire allouée pour chaque valeur
-    for (int i = 0; i < col->t_log; ++i) {
-        free(col->data[i]);
-    }
-    // Libère la mémoire allouée pour la structure COLUMN
-    free(col);
-}
-void print_col(COLUMN* col) {
-    if (col == NULL) {
-        printf("Column is NULL\n");
-        return;
-    }
-    else {
-        printf("%s \n", col->title);
-        for (int i = 0; i < (*col).t_log; ++i) {
-            printf("[%d] %d\n", i, *col->data[i]);
+    for(int i = 0; i < col->size; i++){
+        if (col->data[i] == NULL) {
+            printf("[%d] NULL\n", i);
         }
+        else{
+            char str[256];
+            convert_value(col, i, str, sizeof(str));
+            printf("[%d] %s\n", i, str);}
     }
 }
 
 int nbr_occurences(COLUMN *col, int x) {
     int count = 0;
-    for (int i = 0; i < col->t_log; ++i) {
+    for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) == x) {
             count++;
         }
@@ -99,9 +169,8 @@ int nbr_occurences(COLUMN *col, int x) {
     return count;
 }
 
-
 int get_values(COLUMN *col, int x) {
-    if (x < 0 || x >= col->t_log){
+    if (x < 0 || x >= col->size){
         printf("Cette valeur n'existe pas");
     }
     return *col->data[x];
@@ -109,7 +178,7 @@ int get_values(COLUMN *col, int x) {
 
 int values_superior(COLUMN *col, int x) {
     int count = 0;
-    for (int i = 0; i < col->t_log; ++i) {
+    for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) > x) {
             count++;
         }
@@ -119,7 +188,7 @@ int values_superior(COLUMN *col, int x) {
 
 int values_inferior(COLUMN *col, int x) {
     int count = 0;
-    for (int i = 0; i < col->t_log; ++i) {
+    for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) < x) {
             count++;
         }
@@ -129,15 +198,10 @@ int values_inferior(COLUMN *col, int x) {
 
 int values_equal(COLUMN *col, int x) {
     int count = 0;
-    for (int i = 0; i < col->t_log; ++i) {
+    for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) == x) {
             count++;
         }
     }
     return count;
-}
-
-void delete_column(COLUMN **col) {
-    free(*col);
-    *col = NULL;
 }
