@@ -14,6 +14,8 @@ void delete_cdataframe(CDATAFRAME **cdf);
 
 void print_cdataframe(CDATAFRAME **cdf);
 
+int get_cdataframe_cols_size(CDATAFRAME *cdf);
+
 void print_cdataframe_rows(CDATAFRAME**, int*, int*);
 
 void print_cdataframe_col(CDATAFRAME**, int*, int*);
@@ -25,8 +27,6 @@ void delete_row(CDATAFRAME**, int);
 void add_col(CDATAFRAME**, void*, int);
 
 void delete_col(CDATAFRAME *cdf, char *col_name);
-
-int get_cdataframe_cols_size(CDATAFRAME *cdf);
 
 void rename_column_title(CDATAFRAME *cdf, char *old_title, char *new_title);
 

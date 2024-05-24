@@ -47,7 +47,7 @@ void delete_cdataframe(CDATAFRAME **cdf) {
     lst_erase(*cdf);
 }
 
-
+/*
 void print_cdataframe(CDATAFRAME **cdf) {
     if (*cdf == NULL) {
         printf("Le dataframe est vide.\n");
@@ -55,13 +55,14 @@ void print_cdataframe(CDATAFRAME **cdf) {
     } else {
         LNODE *temp = (*cdf)->head;
         while (temp->next != NULL) {
-            printf("%d", temp->data[1]);
+            printf("%d", *(temp)->data);
         }
         for (int i = 0; i < 2; i++)
             print_col("%d \n", (*cdf)->data);
 
     }
 }
+
 
 void print_cdataframe_rows(CDATAFRAME **cdf, int* start, int* end) {
     if (*cdf == NULL) {
@@ -337,4 +338,4 @@ int values_inferior_cdataframe(CDATAFRAME *cdf, int x) {
     }
 
     return count;
-}
+}*/

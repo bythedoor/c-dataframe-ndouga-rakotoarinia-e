@@ -18,5 +18,5 @@ L'utilisateur peut désormais effectuer plusieurs actions sur le dataframe :
 https://github.com/bythedoor/c-dataframe-ndouga-rakotoarinia-e
 
 ## Bugs
-* Les fonctions pour créer un CDataframe sont encore en construction ou ne marchent pas correctement
-* Problème au niveau de l'insertion de différents types de données
+* Les fonctions pour créer un cdataframe sont encore en construction ou ne marchent pas correctement
+* Problème au niveau de l'insertion de données de pointeur NULL

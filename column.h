@@ -37,15 +37,15 @@ void print_col(COLUMN* col);
 
 void convert_value(COLUMN *col, unsigned long long int i, char *str, int size);
 
-int nbr_occurences(COLUMN *col, int x);
+int nbr_occurences(COLUMN *col, void *value);
 
-int get_values(COLUMN *col, int x);
+int get_values(COLUMN *col, void *value);
 
-int values_superior(COLUMN *col, int x);
+int values_superior(COLUMN *col, void *value);
 
-int values_inferior(COLUMN *col, int x);
+int values_inferior(COLUMN *col, void *value);
 
-int values_equal(COLUMN *col, int x);
+int values_equal(COLUMN *col, void *value);
 
 void delete_column(COLUMN **col);
 

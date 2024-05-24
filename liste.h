@@ -20,7 +20,6 @@ typedef struct list_ {
 
 typedef LIST CDATAFRAME;
 
-
 /**
 * création d'un noeud
 */

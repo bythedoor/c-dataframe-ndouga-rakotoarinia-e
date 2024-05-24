@@ -53,39 +53,39 @@ int insert_value(COLUMN *col, void *value) {
         }
     }
 
-    COL_TYPE a;
     // insertion de la valeur en fonction du type
     switch(col->column_type){
         case NULLVAL:
-            col->data[col->size] = "NULL";
+            col->data[col->size] = (void *)malloc(sizeof(void));
+            *((char**)col->data[col->size])= NULL;
             break;
         case UINT:
-            col->data[col->size] = (a*)malloc(sizeof(a));
+            col->data[col->size] = (COL_TYPE *)malloc(sizeof(COL_TYPE));
             *((unsigned int*)col->data[col->size])= *((unsigned int*)value);
             break;
         case INT:
-            col->data[col->size] = (int*)malloc(sizeof(int));
+            col->data[col->size] = (COL_TYPE *)malloc(sizeof(COL_TYPE));
             *((int*)col->data[col->size])= *((int*)value);
             break;
         case CHAR:
-            col->data[col->size] = (char *)malloc(sizeof(char));
+            col->data[col->size] = (COL_TYPE *)malloc(sizeof(COL_TYPE));
             *((char*)col->data[col->size])= *((char*)value);
             break;
         case FLOAT:
-            col->data[col->size] = (char *)malloc(sizeof(char));
-            *((char*)col->data[col->size])= *((char*)value);
+            col->data[col->size] = (COL_TYPE *)malloc(sizeof(COL_TYPE));
+            *((float*)col->data[col->size])= *((float*)value);
             break;
         case DOUBLE:
-            col->data[col->size] = (char *)malloc(sizeof(char));
-            *((char*)col->data[col->size])= *((char*)value);
+            col->data[col->size] = (COL_TYPE *)malloc(sizeof(COL_TYPE));
+            *((double*)col->data[col->size])= *((double*)value);
             break;
         case STRING:
-            col->data[col->size] = (char *)malloc(sizeof(char));
-            *((char*)col->data[col->size])= *((char*)value);
+            col->data[col->size] = (COL_TYPE *)malloc(sizeof(COL_TYPE));
+            *((char**)col->data[col->size])= *((char**)value);
             break;
         case STRUCTURE:
-            col->data[col->size] = (char *)malloc(sizeof(char));
-            *((char*)col->data[col->size])= *((char*)value);
+            col->data[col->size] = (COL_TYPE *)malloc(sizeof(COL_TYPE));
+            *((void**)col->data[col->size])= *((void**)value);
             break;
     }
     if (col->data[col->size] == NULL) {
@@ -145,7 +145,7 @@ void convert_value(COLUMN *col, unsigned long long int i, char *str, int size){
 
 void print_col(COLUMN* col){
     if(col == NULL){
-        printf("Error pointer null");
+        printf("Le pointeur est null");
         return;
     }
     for(int i = 0; i < col->size; i++){
@@ -159,7 +159,9 @@ void print_col(COLUMN* col){
     }
 }
 
-int nbr_occurences(COLUMN *col, int x) {
+/*
+ * Fonctions à corriger
+int nbr_occurences(COLUMN *col, void *value) {
     int count = 0;
     for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) == x) {
@@ -169,14 +171,14 @@ int nbr_occurences(COLUMN *col, int x) {
     return count;
 }
 
-int get_values(COLUMN *col, int x) {
+int get_values(COLUMN *col, void *value) {
     if (x < 0 || x >= col->size){
         printf("Cette valeur n'existe pas");
     }
     return *col->data[x];
 }
 
-int values_superior(COLUMN *col, int x) {
+int values_superior(COLUMN *col, void *value) {
     int count = 0;
     for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) > x) {
@@ -186,7 +188,7 @@ int values_superior(COLUMN *col, int x) {
     return count;
 }
 
-int values_inferior(COLUMN *col, int x) {
+int values_inferior(COLUMN *col, void *value) {
     int count = 0;
     for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) < x) {
@@ -196,7 +198,7 @@ int values_inferior(COLUMN *col, int x) {
     return count;
 }
 
-int values_equal(COLUMN *col, int x) {
+int values_equal(COLUMN *col, void *value) {
     int count = 0;
     for (int i = 0; i < col->size; ++i) {
         if (*(col->data[i]) == x) {
@@ -204,4 +206,4 @@ int values_equal(COLUMN *col, int x) {
         }
     }
     return count;
-}
+}*/

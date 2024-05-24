@@ -45,11 +45,9 @@ int main() {
         printf("\n");
     }
     */
-    COLUMN *mycol = create_column("My column");
-    insert_value(mycol, 52);
-    insert_value(mycol, 44);
-    insert_value(mycol, 15);
-    print_col(mycol);
+    ENUM_TYPE cdftype [] = {INT,CHAR,INT};
+    CDATAFRAME *cdf = create_cdataframe(cdftype, 3);
+    delete_cdataframe(&cdf);
 
     return 0;
 }
